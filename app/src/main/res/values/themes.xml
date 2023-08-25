@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.LifeChanger" parent="Theme.MaterialComponents.Light.DarkActionBar">
+
+    <style name="Theme.SocialMarkaz" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/PrimaryVariant</item>
@@ -17,13 +17,22 @@
         <item name="android:textColor">@color/black</item>
         <!-- Customize your theme here. -->
     </style>
+
     <style name="CustomTabLayoutTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">12sp</item>
     </style>
-    <style name="Theme.LifeChanger.NoActionBar">
+
+    <style name="Theme.SocialMarkaz.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="Theme.LifeChanger.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="Theme.LifeChanger.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.SocialMarkaz.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.SocialMarkaz.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SocialMarkaz" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
 </resources>

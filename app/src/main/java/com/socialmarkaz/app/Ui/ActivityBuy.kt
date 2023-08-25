@@ -1,11 +1,12 @@
-package com.socialmarkaz.app
+package com.socialmarkaz.app.Ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.socialmarkaz.app.R
 
-class MainActivity : AppCompatActivity() {
+class ActivityBuy : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_buy)
     }
 }

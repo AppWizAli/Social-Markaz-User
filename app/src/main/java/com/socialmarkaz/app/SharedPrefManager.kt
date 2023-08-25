@@ -2,8 +2,10 @@ package com.socialmarkaz.app
 
 /*import InvestorAccountModel
 import User*/
+import User
 import android.content.Context
 import android.content.SharedPreferences
+import com.google.gson.Gson
 /*import com.enfotrix.lifechanger.Models.InvestmentModel
 import com.enfotrix.lifechanger.Models.ModelAnnouncement
 import com.enfotrix.lifechanger.Models.ModelBankAccount
@@ -18,7 +20,6 @@ import java.lang.reflect.Type
 
 
 class SharedPrefManager(context: Context) {
-/*
 
 
     private val sharedPref: SharedPreferences = context.getSharedPreferences("myAppPrefs", Context.MODE_PRIVATE)
@@ -35,13 +36,13 @@ class SharedPrefManager(context: Context) {
 
     }
 
-    fun saveInvestment(investment: InvestmentModel) {
+  /*  fun saveInvestment(investment: InvestmentModel) {
 
         editor.putString("Investment", Gson().toJson(investment))
         editor.commit()
 
-    }
-    fun saveFA(modelFA: ModelFA) {
+    }*/
+ /*   fun saveFA(modelFA: ModelFA) {
 
         editor.putString("FA", Gson().toJson(modelFA))
         editor.commit()
@@ -51,9 +52,10 @@ class SharedPrefManager(context: Context) {
     fun putAnnouncement(announcement: ModelAnnouncement) {
         editor.putString("announcement", Gson().toJson(announcement))
         editor.commit()
-    }
+    }*/
 
 
+/*
 
 
     fun isPhoneNumberAdded(): Boolean {
@@ -80,13 +82,14 @@ class SharedPrefManager(context: Context) {
 
 
 
-    */
+*/
 /*fun getInvestment(): InvestmentModel {
 
         val json = sharedPref.getString("Investment", "") ?: ""
         return Gson().fromJson(json, InvestmentModel::class.java)
 
     }*//*
+
 
 
     fun getAnnouncement(): ModelAnnouncement {
@@ -228,9 +231,8 @@ class SharedPrefManager(context: Context) {
 
 
     fun saveNominee(nominee: ModelNominee) {
-        */
-/*val gson = Gson()
-        val json = gson.toJson(nominee)*//*
+val gson = Gson()
+        val json = gson.toJson(nominee)
 
         editor.putString("Nominee", Gson().toJson(nominee))
         editor.putBoolean("IsNomineeAdded",true)
@@ -285,8 +287,7 @@ class SharedPrefManager(context: Context) {
 
 
 
-    */
-/*fun saveNominee(nominee: ModelNominee) {
+fun saveNominee(nominee: ModelNominee) {
 
         editor.putString("cnic", nominee.cnic)
         editor.putString("firstName", nominee.firstName)
@@ -301,7 +302,7 @@ class SharedPrefManager(context: Context) {
         editor.putString("nominator", nominee.nominator)
         editor.putString("nominator_relation", nominee.nominator_relation)
         editor.commit()
-    }*//*
+    }
 
 
 
@@ -324,8 +325,7 @@ class SharedPrefManager(context: Context) {
 
     }
 
-    */
-/*fun getNominee(): InvestorNomineeModel {
+fun getNominee(): InvestorNomineeModel {
 
         return InvestorNomineeModel(
             nomineeName = sharedPref.getString("nomineeName", "")!!,
@@ -335,14 +335,13 @@ class SharedPrefManager(context: Context) {
 
         )
 
-    }*//*
+    }
 
 
     fun getUser(): User {
         val json = sharedPref.getString("Investor", "") ?: ""
         return Gson().fromJson(json, User::class.java)
-        */
-/*return User(
+return User(
             sharedPref.getString("cnic", "")!!,
             sharedPref.getString("firstName", "")!!,
             sharedPref.getString("lastName", "")!!,
@@ -351,7 +350,7 @@ class SharedPrefManager(context: Context) {
             sharedPref.getString("status", "")!!,
             sharedPref.getString("pin", "")!!
 
-        )*//*
+        )
 
     }
 
@@ -361,6 +360,7 @@ class SharedPrefManager(context: Context) {
 
 
 
+*/
 
 
 
@@ -434,6 +434,5 @@ class SharedPrefManager(context: Context) {
         sharedPref.edit().clear().apply()
 
     }
-*/
 
 }

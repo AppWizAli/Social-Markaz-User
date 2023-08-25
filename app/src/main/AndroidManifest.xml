@@ -13,7 +13,33 @@
         android:theme="@style/Theme.SocialMarkaz"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".Ui.ActivityProductDetails"
+            android:exported="false"
+            android:label="@string/title_activity_product_details"
+            android:theme="@style/Theme.SocialMarkaz" />
+        <activity
+            android:name=".Ui.ActivtyProductDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivitySetting"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivityCoins"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivitySearch"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivityStoreDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivityBuy"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivtyStoreDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

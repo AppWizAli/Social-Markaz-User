@@ -10,7 +10,7 @@ import android.view.Window
 import android.widget.Button
 import android.widget.EditText
 import androidx.core.content.ContextCompat
-import com.enfotrix.lifechanger.Models.ModelNominee
+import com.socialmarkaz.app.R
 import java.text.SimpleDateFormat
 import java.util.Locale
 
