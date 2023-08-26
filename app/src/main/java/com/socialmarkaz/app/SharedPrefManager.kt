@@ -30,11 +30,13 @@ class SharedPrefManager(context: Context) {
 
     fun saveUser(user: User) {
 
-        editor.putString("Investor", Gson().toJson(user))
+        editor.putString("User", Gson().toJson(user))
         editor.commit()
 
 
     }
+
+
 
   /*  fun saveInvestment(investment: InvestmentModel) {
 

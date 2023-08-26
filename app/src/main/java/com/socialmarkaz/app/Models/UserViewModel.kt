@@ -104,5 +104,16 @@ class UserViewModel(context: Application) : AndroidViewModel(context) {
 //    ): LiveData<Boolean> {
 //        return userRepo.updateUser(firstName, lastName, address, mobileNumber)
 //    }*/
+ suspend fun addUser(user: User): LiveData<Boolean> {
+     return userRepo.registerUser(user)
+ }
 
+    suspend fun isUserExist(EMAIL: String): Task<QuerySnapshot> {
+        return userRepo.isUserExist(EMAIL)
+    }
+    fun saveLoginAuth(user: User,token:String, loggedIn: Boolean){
+        sharedPrefManager.saveUser(user)
+        sharedPrefManager.putToken(token)
+        sharedPrefManager.setLogin(loggedIn)
+    }
 }

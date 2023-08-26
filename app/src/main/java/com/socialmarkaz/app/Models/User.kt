@@ -4,7 +4,7 @@ import com.google.firebase.Timestamp
 
 
     data class User @JvmOverloads constructor(
-        var cnic: String = "",
+        var email: String = "",
         var firstName: String = "",
         var lastName: String = "",
         var address: String = "",
@@ -14,7 +14,7 @@ import com.google.firebase.Timestamp
         var cnic_front: String = "",
         var cnic_back: String = "",
         var pin: String = "",
-        var id: String = "",
+        var user_id: String = "",
         var so_id: String = "",
          val createdAt: Timestamp = Timestamp.now() // Creation timestamp
 )

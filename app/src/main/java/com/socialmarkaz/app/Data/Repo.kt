@@ -40,6 +40,7 @@ class Repo(val context: Context) {
     private val ProfitTaxCollection = db.collection(constants.PROFIT_TAX_COLLECTION)
     private val WithdrawCollection = db.collection(constants.WITHDRAW_COLLECTION)
     private val NotificationCollection = db.collection(constants.NOTIFICATION_COLLECTION)
+    private val UserCollection = db.collection(constants.USER_COLLECTION)
 
 
     ///////////////////////////////////////////////////////////////////////////////
@@ -348,7 +349,7 @@ class Repo(val context: Context) {
     suspend fun registerUser(user: User): LiveData<Boolean> {
         val result = MutableLiveData<Boolean>()
         user.status=constants.INVESTOR_STATUS_ACTIVE
-        InvestorsCollection.add(user).addOnSuccessListener { documents ->
+        InvestorsColilection.add(user).addOnSuccessListener { documents ->
             result.value =true
         }.addOnFailureListener {
             result.value = false
@@ -376,5 +377,18 @@ class Repo(val context: Context) {
 
 
 */
+    suspend fun registerUser(user: User): LiveData<Boolean> {
+        val result = MutableLiveData<Boolean>()
+        UserCollection.add(user).addOnSuccessListener { documents ->
+            result.value =true
+        }.addOnFailureListener {
+            result.value = false
+        }
+        return result
+    }
 
+
+    suspend fun isUserExist(EMAIL: String): Task<QuerySnapshot> {
+        return UserCollection.whereEqualTo(constants.USER_EMAIL, EMAIL).get()
+    }
 }

@@ -20,7 +20,7 @@ public class Constants  {
 
 
     ///////////////////////////  KEYS  ///////////////////
-    public var INVESTOR_CNIC= "cnic"
+    public var USER_EMAIL= "email"
     public var INVESTOR_PIN= "pin"
     public var ACCOUNT_HOLDER= "account_holder"
     public var INVESTOR_ID= "investorID"
@@ -63,15 +63,15 @@ public class Constants  {
     public var INVESTOR_LOGIN_FAILURE_MESSAGE= "Incorrect PIN!"
 
     public var NOMINEE_SIGNUP_MESSAGE= "Nominee added successfully!"
-    public var INVESTOR_SIGNUP_MESSAGE= "User registered successfully!"
-    public var INVESTOR_SIGNUP_FAILURE_MESSAGE= "Something went wrong!"
+    public var USER_SIGNUP_MESSAGE= "User registered successfully!"
+    public var USER_SIGNUP_FAILURE_MESSAGE= "Something went wrong!"
     public var SOMETHING_WENT_WRONG_MESSAGE= "Something went wrong!"
 
     public var ACCOPUNT_ADDED_MESSAGE= "Account Added Successfully!"
 
 
     public var INVESTOR_CNIC_EXIST= "User(CNIC) already exist!"
-    public var INVESTOR_CNIC_NOT_EXIST= "User(CNIC) not exist!"
+    public var USER_EMAIL_NOT_EXIST= "User(EMAIL) not exist!"
     public var INVESTOR_CNIC_BLOCKED= "User(CNIC) Blocked!"
 
     ///////////////////////////// Activities/Fragment Flow //////////////////////////

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "794071122986",
+    "project_id": "social-markaz",
+    "storage_bucket": "social-markaz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794071122986:android:8e22575706b3b8dd886f53",
+        "android_client_info": {
+          "package_name": "com.socialmarkaz.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794071122986-vv8optulipuos5i48sd0j55lq88ha4p4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8nU_QG1NbL_HiJEMGRUaR2tQzIs3-VZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794071122986-vv8optulipuos5i48sd0j55lq88ha4p4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
