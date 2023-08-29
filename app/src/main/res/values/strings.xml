@@ -42,7 +42,7 @@
     </string-array>
 
 
-    <string-array name="listofbanks">
+    <string-array name="listofaccounts">
         <item>Allied Bank Limited (ABL)</item>
         <item>Askari Bank</item>
         <item>Bank Alfalah Limited (BAFL)</item>
@@ -67,6 +67,8 @@
         <item>United Bank Limited (UBL)</item>
         <item>Upaisa</item>
         <item>Zarai Taraqiati Bank Limited (ZTBL)</item>
+        <item>Jazz Cash</item>
+        <item>EasyPaisa</item>
     </string-array>
     <string name="title_activity_withdraw">ActivityWithdraw</string>
     <string name="tab_text_1">Tab 1</string>

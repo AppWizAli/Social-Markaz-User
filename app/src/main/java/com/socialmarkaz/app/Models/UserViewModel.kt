@@ -116,4 +116,26 @@ class UserViewModel(context: Application) : AndroidViewModel(context) {
         sharedPrefManager.putToken(token)
         sharedPrefManager.setLogin(loggedIn)
     }
+
+
+    suspend fun updateUser(user: User): LiveData<Boolean> {
+        return userRepo.updateUser(user)
+    }
+
+
+    suspend fun getUserAccounts(token: String): Task<QuerySnapshot> {
+        return userRepo.userAccounts(token)
+    }
+    suspend fun getUser(token: String): Task<DocumentSnapshot> {
+        return userRepo.getUser(token)
+    }
+    suspend fun uploadPhoto(imageUri: Uri, type:String): UploadTask {
+        return userRepo.uploadPhoto(imageUri, type)
+    }
+
+    suspend fun addUserAccount(paymentDetails: ModelPaymentDetails): LiveData<Boolean> {
+        return userRepo.registerPaymentDetails(paymentDetails)
+    }
+
+
 }

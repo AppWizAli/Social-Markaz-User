@@ -9,7 +9,7 @@ public class Constants  {
 
     public var STORE_COLLECTION="Store Owner"
     public var NOMINEE_COLLECTION="Nominees"
-    public var ACCOUNTS_COLLECTION="Accounts"
+    public var ACCOUNTS_COLLECTION="User-Accounts"
     public var INVESTMENT_COLLECTION="Investment"
     public var ANNOUNCEMENT_COLLECTION="Admin Announcement"
     public var TRANSACTION_REQ_COLLECTION="Transactions"
@@ -33,7 +33,7 @@ public class Constants  {
 
     ///////////////////////////  LOCAL KEYS Values ///////////////////
     public var VALUE_ACTIVITY_FLOW_USER_DETAILS= "from_user_details"
-    public var VALUE_DIALOG_FLOW_INVESTOR_BANK= "from_investor"
+    public var VALUE_DIALOG_FLOW_USER_ACCOUNT= "from_user"
     public var VALUE_DIALOG_FLOW_INVESTOR_CNIC= "from_investor"
     public var VALUE_DIALOG_FLOW_NOMINEE_BANK= "from_nominee"
     public var VALUE_DIALOG_FLOW_NOMINEE_CNIC= "from_nominee"
@@ -68,9 +68,10 @@ public class Constants  {
     public var SOMETHING_WENT_WRONG_MESSAGE= "Something went wrong!"
 
     public var ACCOPUNT_ADDED_MESSAGE= "Account Added Successfully!"
+    public var USER_GENDER_ADDED_MESSAGE= "User Gender Added Successfully!"
 
 
-    public var INVESTOR_CNIC_EXIST= "User(CNIC) already exist!"
+    public var USER_LOCATION_ADDED_MESSAGE= "User Location Added Successfully"
     public var USER_EMAIL_NOT_EXIST= "User(EMAIL) not exist!"
     public var INVESTOR_CNIC_BLOCKED= "User(CNIC) Blocked!"
 

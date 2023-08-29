@@ -8,6 +8,7 @@
     android:padding="10dp"
     android:gravity="center"
     tools:ignore="HardCodedText">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,7 +27,6 @@
         app:boxCornerRadiusBottomEnd="@dimen/corner_radius"
         android:hint="Username"
         android:layout_margin="10dp"
-        android:visibility="gone"
         tools:visibility="visible"
         app:boxBackgroundColor="@android:color/transparent">
         <com.google.android.material.textfield.TextInputEditText
@@ -84,7 +84,6 @@
         android:hint="Confirm Password"
         android:layout_margin="10dp"
         app:endIconMode="password_toggle"
-        android:visibility="gone"
         tools:visibility="visible"
         app:boxBackgroundColor="@android:color/transparent">
         <com.google.android.material.textfield.TextInputEditText
@@ -95,22 +94,13 @@
         <!-- Ye tb show krain gy jb signup krna hoga user nay! sai?   smjh ni in passwrd waloon ki ,,,,
          user login jb krta hai, email password se.. mtlb ap ny donon bnaye han ,,,?yes...-->
     </com.google.android.material.textfield.TextInputLayout>
-    <TextView
-        android:id="@+id/btn_reset_pass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:text="Forgot Password?"
-        android:padding="5dp"
-        tools:visibility="gone"
-        android:layout_marginEnd="5dp"/>
+
     <CheckBox
         android:id="@+id/check_terms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="5dp"
-        android:visibility="gone"
         tools:visibility="visible"
         android:text="I've read and agree to Terms and Conditions"/>
     <com.google.android.material.button.MaterialButton

@@ -37,7 +37,9 @@ class ActivitySignUp : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+mContext=this@ActivitySignUp
+        utils=Utils(mContext)
+        constants=Constants()
         binding.Signin.setOnClickListener {
 
                 startActivity(Intent(mContext, ActivityLogin::class.java))
@@ -46,14 +48,16 @@ class ActivitySignUp : AppCompatActivity() {
             binding.Signup.setOnClickListener {
                 if (!(binding.checkTerms.isChecked))
                     Toast.makeText(mContext, "Please confirm privacy and terms conditions", Toast.LENGTH_SHORT).show()
-               else if ((!IsEmpty()) && IsValid()) {
+               else if ((!IsEmpty()) ) {
                     saveuser()
                 }
+                else
+                    Toast.makeText(mContext, "Failed to create Account", Toast.LENGTH_SHORT).show()
 
             }
 
     }
-
+    /*&& IsValid()*/
     private fun saveuser() {
          user=User(
             binding.tilMail.editText?.text.toString(),
@@ -91,7 +95,7 @@ class ActivitySignUp : AppCompatActivity() {
 
 
 
-    private fun IsValid(): Boolean {
+  /*  private fun IsValid(): Boolean {
         if (binding.tilPass.editText?.text.toString()
                 .equals(binding.tilPassc.editText?.toString())
         ) return true
@@ -100,7 +104,7 @@ class ActivitySignUp : AppCompatActivity() {
             return false
         }
 
-    }
+    }*/
 
     private fun IsEmpty(): Boolean {
 

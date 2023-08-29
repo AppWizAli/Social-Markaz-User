@@ -6,7 +6,7 @@ import com.google.firebase.Timestamp
     data class User @JvmOverloads constructor(
         var email: String = "",
         var firstName: String = "",
-        var lastName: String = "",
+        var gender: String = "",
         var address: String = "",
         var phone: String = "",
         var status: String = "",

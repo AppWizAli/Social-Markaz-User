@@ -43,15 +43,24 @@ class ActivitySplash : AppCompatActivity() {
         Timer().schedule(1500){
 
 
-            if(sharedPrefManager.isLoggedIn()==true) startActivity(Intent(mContext,MainActivity::class.java))
-                else {
+            if(sharedPrefManager.isLoggedIn()==true)
+            {
+
+                startActivity(Intent(mContext,MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            )
+            finish()
+
+            }
+                else if (sharedPrefManager.isLoggedIn()==false) {
                     startActivity(Intent(mContext,ActivityLogin::class.java))
                     finish()
                 }
-
+            else
+                startActivity(Intent(mContext,ActivityUserDetails::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                )
+            finish()
             }
             }
-
 
 
    /* fun getData(){

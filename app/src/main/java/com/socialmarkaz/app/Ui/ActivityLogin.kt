@@ -76,7 +76,6 @@ class ActivityLogin : AppCompatActivity() {
                 .addOnCompleteListener{task ->
                     utils.endLoadingAnimation()
                     if (task.isSuccessful) {
-
                         if(task.result.size()>0){
                             var token: String = ""
                             val documents = task.result
@@ -85,10 +84,12 @@ class ActivityLogin : AppCompatActivity() {
                                 user = document.toObject(User::class.java)
                                 token= document.id
                             }
+
                            if(documents.size()==0)
+
                                 binding.EtUsername.editText?.error =constants.USER_EMAIL_NOT_EXIST
                            else
-                               user?.let { loginUser(it,binding.EtUsername.editText?.toString(),binding.EtPassword.editText?.toString(),token) }
+                               user?.let { loginUser(it,binding.EtUsername.editText?.text.toString(),binding.EtPassword.editText?.text.toString(),token) }
                         }
                         else
                             binding.EtUsername.editText?.error =constants.USER_EMAIL_NOT_EXIST
@@ -125,45 +126,41 @@ class ActivityLogin : AppCompatActivity() {
 
     private fun loginUser(user:User,email: String?, password: String?,token:String) {
 
-        if (user != null) {
-            if (user.email.equals(email)) {
-                if (user.pin.equals(password)) {
-                    if (user != null) userViewModel.saveLoginAuth(
-                        user,
-                        token,
-                        true
-                    )//usre +token+login_boolean
-                    startActivity(
-                        Intent(
-                            mContext,
-                            MainActivity::class.java
-                        ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-                    )
-                    finish()
-                }
-            else
-                    Toast.makeText(mContext, "Incorrect Password", Toast.LENGTH_SHORT).show()/*
-                else{
-                    if(user!=null)userViewModel.saveLoginAuth(user, token, true)//usre +token+login_boolean
-                    startActivity(Intent(mContext,ActivityUserDetails::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK))
-                    finish()
-                }
-
-
+        if (user.email.equals(email)) {
+            if (user.pin.equals(password)) {
+                userViewModel.saveLoginAuth(
+                    user,
+                    token,
+                    true
+                )//usre +token+login_boolean
+                startActivity(
+                    Intent(
+                        mContext,
+                        ActivityUserDetails::class.java
+                    ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                )
+                finish()
+            }
+        else
+                Toast.makeText(mContext, "Incorrect Password", Toast.LENGTH_SHORT).show()/*
+            else{
+                if(user!=null)userViewModel.saveLoginAuth(user, token, true)//usre +token+login_boolean
+                startActivity(Intent(mContext,ActivityUserDetails::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK))
+                finish()
             }
 
 
         }
-        else {
-            Toast.makeText(mContext, "Incorrect Pin", Toast.LENGTH_SHORT).show()
-        }*/
 
-            }
-            else
-                Toast.makeText(mContext, "Incorrect email", Toast.LENGTH_SHORT).show()
+
+    }
+    else {
+        Toast.makeText(mContext, "Incorrect Pin", Toast.LENGTH_SHORT).show()
+    }*/
+
         }
         else
-            Toast.makeText(mContext, "Null user testing", Toast.LENGTH_SHORT).show()
+            Toast.makeText(mContext, "Incorrect email", Toast.LENGTH_SHORT).show()
     }
 
 

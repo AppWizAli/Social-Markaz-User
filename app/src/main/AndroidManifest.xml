@@ -12,12 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialMarkaz"
         tools:targetApi="31">
+
+        <activity
+            android:name=".Ui.ActivityUserDetails"
+            android:exported="false" />
         <activity
             android:name=".Ui.ActivitySignUp"
             android:exported="false" />
         <activity
             android:name=".Ui.ActivitySplash"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,13 +36,13 @@
             android:exported="false"
             android:label="@string/title_activity_product_details"
             android:theme="@style/Theme.SocialMarkaz" />
-
         <activity
             android:name=".Ui.ActivitySetting"
             android:exported="false" />
         <activity
             android:name=".Ui.ActivityCoins"
             android:exported="false" />
+
         <activity
             android:name=".Ui.ActivitySearch"
             android:exported="false" />
@@ -46,13 +50,14 @@
             android:name=".Ui.ActivityStoreDetails"
             android:exported="false" />
         <activity
+            android:name=".Ui.ActivityPhoneNumber"
+            android:exported="false" />
+        <activity
             android:name=".Ui.ActivityBuy"
             android:exported="false" />
-
         <activity
             android:name=".Ui.MainActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
     </application>
 
 </manifest>

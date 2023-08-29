@@ -355,12 +355,12 @@ return User(
         )
 
     }
+ssidjsaiod k
+kddk;lk k
+lfkdfk xdlfkd fdklf dflc,lk,
 
-
-
-
-
-
+sjkdncdfc
+jkcskdkfjsdofjsdlk kfjgfas'k
 
 */
 
@@ -436,5 +436,56 @@ return User(
         sharedPref.edit().clear().apply()
 
     }
+    fun isPhoneNumberAdded(): Boolean {
+        return sharedPref.getBoolean("IsPhoneNumberAdded", false)!!
+    }
+    fun isPaymentAdded(): Boolean {
+        return sharedPref.getBoolean("IsUserPaymentDetailAdded", false)!!
+    }
+
+    fun isLocationAdded(): Boolean {
+        return sharedPref.getBoolean("IsLocationAdded", false)!!
+    }
+    fun isGenderAdded(): Boolean {
+        return sharedPref.getBoolean("IsGenderAdded", false)!!
+    }
+  fun isUserPhotoAdded(): Boolean {
+        return sharedPref.getBoolean("IsUserPhotoAdded", false)!!
+    }
+
+    fun PutUserPhone(IsPhoneNumberAdded: Boolean) {
+        editor.putBoolean("IsPhoneNumberAdded",IsPhoneNumberAdded)
+        editor.commit()
+    } fun PutUserGender(IsGenderAdded: Boolean) {
+        editor.putBoolean("IsGenderAdded",IsGenderAdded)
+        editor.commit()
+    }
+    fun putUserPhoto(IsUserPhotoAdded: Boolean) {
+        editor.putBoolean("IsUserPhotoAdded",IsUserPhotoAdded)
+        editor.commit()
+    }
+    fun getUser(): User {
+        val json = sharedPref.getString("User", "") ?: ""
+        return Gson().fromJson(json, User::class.java)
+   /*     return User(
+            sharedPref.getString("email", "")!!,
+            sharedPref.getString("firstName", "")!!,
+            sharedPref.getString("lastName", "")!!,
+            sharedPref.getString("address", "")!!,
+            sharedPref.getString("phone", "")!!,
+            sharedPref.getString("status", "")!!,
+            sharedPref.getString("pin", "")!!)*/
+
+    }
+    fun putUserAccount(IsUserPaymentDetailAdded: Boolean) {
+        editor.putBoolean("IsUserPaymentDetailAdded",IsUserPaymentDetailAdded)
+        editor.commit()
+    }
+fun PutUserLocation(IsLocationAdded:Boolean)
+{
+    editor.putBoolean("IsLocationAdded",IsLocationAdded)
+    editor.commit()
+}
+
 
 }
