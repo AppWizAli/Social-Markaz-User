@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Ui.ActivitySearchResult">
+    <EditText
+        android:id="@+id/etProductCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" Select Product Category"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="20dp"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginHorizontal="20dp"/>
+    <EditText
+        android:id="@+id/etFeatureSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Feature Selection"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="20dp"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginHorizontal="20dp"/>
+    <GridLayout
+        android:id="@+id/gridSortingOptions"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:columnCount="4"
+        android:rowCount="1"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp">
+
+        <!-- Low to High Option -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLowToHigh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pricing Low to High"
+                android:padding="1dp"
+                android:textColor="@color/primary"/>
+
+            <!-- Customize the layout of the CardView, e.g., TextView with "Low to High" label -->
+        </androidx.cardview.widget.CardView>
+
+        <!-- High to Low Option -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardHighToLow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pricing High to Low"
+                android:padding="1dp"
+                android:textColor="@color/primary"/>
+            <!-- Customize the layout of the CardView, e.g., TextView with "High to Low" label -->
+        </androidx.cardview.widget.CardView>
+
+        <!-- Recommended Option -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardRecommended"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recomend"
+                android:layout_gravity="center"
+                android:padding="1dp"
+                android:textColor="@color/primary"/>
+            <!-- Customize the layout of the CardView, e.g., TextView with "Recommended" label -->
+        </androidx.cardview.widget.CardView>
+
+        <!-- Top Selling Option -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTopSelling"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top"
+                android:padding="1dp"
+                android:layout_gravity="center"
+                android:textColor="@color/primary"/>
+            <!-- Customize the layout of the CardView, e.g., TextView with "Top Selling" label -->
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+    <androidx.recyclerview.widget.RecyclerView
+    android:padding="10dp"
+    android:id="@+id/rvSearchResult"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+</LinearLayout>

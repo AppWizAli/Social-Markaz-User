@@ -12,7 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialMarkaz"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Ui.ActivityWebView"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivityLocation"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivityAdress"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivityAccount"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivityPayment"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivityTheme"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.ActivitySearchResult"
+            android:exported="false" />
         <activity
             android:name=".Ui.ActivityUserDetails"
             android:exported="false" />
@@ -21,13 +41,7 @@
             android:exported="false" />
         <activity
             android:name=".Ui.ActivitySplash"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".Ui.ActivityLogin"
             android:exported="false" />
@@ -38,13 +52,15 @@
             android:theme="@style/Theme.SocialMarkaz" />
         <activity
             android:name=".Ui.ActivitySetting"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Ui.ActivityCoins"
-            android:exported="false" />
-
-        <activity
-            android:name=".Ui.ActivitySearch"
             android:exported="false" />
         <activity
             android:name=".Ui.ActivityStoreDetails"
@@ -54,7 +70,7 @@
             android:exported="false" />
         <activity
             android:name=".Ui.ActivityBuy"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Ui.MainActivity"
             android:exported="false" />

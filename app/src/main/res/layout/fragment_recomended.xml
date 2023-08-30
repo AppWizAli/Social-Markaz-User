@@ -6,11 +6,10 @@
     android:orientation="vertical"
     tools:context=".Fragments.FragmentRecomended">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Recomneded"
-        android:layout_gravity="center"/>
+   <androidx.recyclerview.widget.RecyclerView
+       android:padding="10dp"
+       android:id="@+id/rvRecProduct"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
 
 </FrameLayout>
