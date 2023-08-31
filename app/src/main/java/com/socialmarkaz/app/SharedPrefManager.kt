@@ -6,6 +6,8 @@ import User
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.socialmarkaz.app.Models.Product
 /*import com.enfotrix.lifechanger.Models.InvestmentModel
 import com.enfotrix.lifechanger.Models.ModelAnnouncement
 import com.enfotrix.lifechanger.Models.ModelBankAccount
@@ -487,5 +489,22 @@ fun PutUserLocation(IsLocationAdded:Boolean)
     editor.commit()
 }
 
+    fun getRecProductList(): List<Product>{
 
+        val json = sharedPref.getString("RecProduct", "") ?: ""
+        val type: Type = object : TypeToken<List<Product?>?>() {}.getType()
+        //return Gson().fromJson(json, type)
+
+        return if (!json.isNullOrEmpty()) {
+            Gson().fromJson(json, type) ?: emptyList()
+        } else {
+            emptyList()
+        }
+    }
+
+
+    fun putRecProductList(list: List<Product>) {
+        editor.putString("RecProduct", Gson().toJson(list))
+        editor.commit()
+    }
 }

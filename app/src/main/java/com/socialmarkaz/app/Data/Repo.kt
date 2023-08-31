@@ -38,7 +38,7 @@ class Repo(val context: Context) {
     private var InvestorsCollection = db.collection(constants.INVESTOR_COLLECTION)*/
     private val NomineesCollection = db.collection(constants.NOMINEE_COLLECTION)
     private val AccountsCollection = db.collection(constants.ACCOUNTS_COLLECTION)
-    private val InvestmentCollection = db.collection(constants.INVESTMENT_COLLECTION)
+    private val productCollection = db.collection(constants.PRODUCT_COLLECTION)
     private val TransactionsReqCollection = db.collection(constants.TRANSACTION_REQ_COLLECTION)
     private val ProfitTaxCollection = db.collection(constants.PROFIT_TAX_COLLECTION)
     private val WithdrawCollection = db.collection(constants.WITHDRAW_COLLECTION)
@@ -445,6 +445,8 @@ class Repo(val context: Context) {
     }
 
 
-
+    suspend fun getproducts(): Task<QuerySnapshot> {
+        return productCollection.get()
+    }
 
 }

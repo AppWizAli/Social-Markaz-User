@@ -10,7 +10,7 @@ public class Constants  {
     public var STORE_COLLECTION="Store Owner"
     public var NOMINEE_COLLECTION="Nominees"
     public var ACCOUNTS_COLLECTION="User-Accounts"
-    public var INVESTMENT_COLLECTION="Investment"
+    public var PRODUCT_COLLECTION="Products"
     public var ANNOUNCEMENT_COLLECTION="Admin Announcement"
     public var TRANSACTION_REQ_COLLECTION="Transactions"
     public var PROFIT_TAX_COLLECTION="ProfitTax"

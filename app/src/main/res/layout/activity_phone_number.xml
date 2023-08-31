@@ -152,7 +152,7 @@
                 android:id="@+id/btnSendOtp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+              android:layout_marginTop="9dp"
                 android:background="@drawable/bg_button"
                 android:drawableRight="@drawable/baseline_keyboard_arrow_right_24"
                 android:drawableTint="@color/white"

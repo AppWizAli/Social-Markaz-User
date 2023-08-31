@@ -24,9 +24,9 @@ class HomePagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when (position) {
-            0 -> "Invest"
+            0 -> "Recomended"
             1 -> "Following"
-            2 -> "Recommended"
+            2 -> "Invest"
             else -> null
         }
     }

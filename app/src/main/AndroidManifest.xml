@@ -41,7 +41,13 @@
             android:exported="false" />
         <activity
             android:name=".Ui.ActivitySplash"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Ui.ActivityLogin"
             android:exported="false" />
@@ -52,13 +58,8 @@
             android:theme="@style/Theme.SocialMarkaz" />
         <activity
             android:name=".Ui.ActivitySetting"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".Ui.ActivityCoins"
             android:exported="false" />
