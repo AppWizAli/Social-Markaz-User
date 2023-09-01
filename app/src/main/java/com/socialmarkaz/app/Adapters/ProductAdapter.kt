@@ -1,16 +1,13 @@
 package com.socialmarkaz.app.Adapters
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.socialmarkaz.app.Constants
 import com.socialmarkaz.app.Models.Product
 import com.socialmarkaz.app.databinding.RecProductBinding
-import java.text.SimpleDateFormat
-import java.util.Locale
 
-class RecomendedProductAdapter ( val data: List<Product>) : RecyclerView.Adapter<RecomendedProductAdapter.ViewHolder>() {
+class ProductAdapter (val data: List<Product>) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
 
     var constant = Constants()
@@ -46,9 +43,9 @@ class RecomendedProductAdapter ( val data: List<Product>) : RecyclerView.Adapter
             productBinding.productName.text = productModel.productName
             productBinding.price.text = productModel.price
             productBinding.sellerName.text = productModel.selerName
+}
 
 
 
-        }
     }
 }

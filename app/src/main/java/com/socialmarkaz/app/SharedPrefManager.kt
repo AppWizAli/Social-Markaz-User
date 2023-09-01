@@ -501,10 +501,58 @@ fun PutUserLocation(IsLocationAdded:Boolean)
             emptyList()
         }
     }
+    fun getFollProductList(): List<Product>{
+
+        val json = sharedPref.getString("FollProduct", "") ?: ""
+        val type: Type = object : TypeToken<List<Product?>?>() {}.getType()
+        //return Gson().fromJson(json, type)
+
+        return if (!json.isNullOrEmpty()) {
+            Gson().fromJson(json, type) ?: emptyList()
+        } else {
+            emptyList()
+        }
+    }
+    fun getPurchProductList(): List<Product>{
+
+        val json = sharedPref.getString("PurchProduct", "") ?: ""
+        val type: Type = object : TypeToken<List<Product?>?>() {}.getType()
+        //return Gson().fromJson(json, type)
+
+        return if (!json.isNullOrEmpty()) {
+            Gson().fromJson(json, type) ?: emptyList()
+        } else {
+            emptyList()
+        }
+    }
+    fun getCartProductList(): List<Product>{
+
+        val json = sharedPref.getString("CartProduct", "") ?: ""
+        val type: Type = object : TypeToken<List<Product?>?>() {}.getType()
+        //return Gson().fromJson(json, type)
+
+        return if (!json.isNullOrEmpty()) {
+            Gson().fromJson(json, type) ?: emptyList()
+        } else {
+            emptyList()
+        }
+    }
 
 
     fun putRecProductList(list: List<Product>) {
         editor.putString("RecProduct", Gson().toJson(list))
+        editor.commit()
+    }
+    fun putPurchProductList(list: List<Product>) {
+        editor.putString("PurchProduct", Gson().toJson(list))
+        editor.commit()
+    }
+    fun putCartProductList(list: List<Product>) {
+        editor.putString("CartProduct", Gson().toJson(list))
+        editor.commit()
+    }
+    fun putFollProductList(list: List<Product>) {
+        editor.putString("FollProduct", Gson().toJson(list))
         editor.commit()
     }
 }

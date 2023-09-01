@@ -8,5 +8,6 @@ data class Product @JvmOverloads constructor(
     var selerName: String = "",
     var productPhoto: String = "",
     var discount: String = "",
+    var type:String=""
 
 )

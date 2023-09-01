@@ -48,7 +48,10 @@ public class Constants  {
     public var TRANSACTION_STATUS_PENDING= "Pending"
     public var TRANSACTION_STATUS_APPROVED= "Approved"
     public var TRANSACTION_STATUS_REJECT= "Reject"
-    public var TRANSACTION_TYPE_WITHDRAW= "Withdraw"
+    public var PRODUCT_TYPE_REC= "RecProduct"
+    public var PRODUCT_TYPE_CART= "Cart"
+    public var PRODUCT_TYPE_PURCH= "Purchased"
+    public var PRODUCT_TYPE_FOLL= "FollProduct"
     public var TRANSACTION_TYPE_INVESTMENT= "Investment"
     public var PROFIT_TYPE= "Profit"
     public var TAX_TYPE= "Tax"
@@ -85,7 +88,7 @@ public class Constants  {
     public var FROM_PENDING_WITHDRAW_REQ= "FragmentPendingWithdrawReq"
     public var FROM_PENDING_INVESTMENT_REQ= "FragmentPendingInvestmentReq"
     public var FROM_APPROVED_WITHDRAW_REQ= "FragmentApprovedWithdrawReq"
-    public var FROM_APPROVED_INVESTMENT_REQ= "FragmentApprovedInvestmentReq"
+    public var FROM_RECOMENDED_PRODUCT= "FragmentRecomendedProduct"
 
 
 
