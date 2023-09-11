@@ -195,70 +195,70 @@
             app:cardCornerRadius="8dp">
 
 
-            <RelativeLayout
-                android:id="@+id/layUserProfilePhoto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/secondary_m">
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:id="@+id/layUserProfilePhoto"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:orientation="vertical">
+                    android:background="@color/secondary_m">
+
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/primary"
+                                android:textStyle="bold"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Profile Photo"/>
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/baseline_keyboard_arrow_right_24"
+                                android:tint="@color/primary" />
+                        </LinearLayout>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/primary"
-                            android:textStyle="bold"
-                            android:layout_gravity="center_horizontal"
-                            android:text="Profile Photo"/>
+                            android:text="Upload your profile photo for clear identity"
+                            android:textSize="12dp"
+                            android:layout_marginTop="2dp"
+                            android:textColor="#7C7B7B" />
 
+                        <TextView
+                            android:id="@+id/tvHeaderUserPhoto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                          android:layout_marginTop="9dp"
+                            android:text="Required*"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/baseline_keyboard_arrow_right_24"
-                            android:tint="@color/primary" />
                     </LinearLayout>
-                    <TextView
+
+
+                    <ImageView
+                        android:id="@+id/imgCheckUserPhoto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Upload your profile photo for clear identity"
-                        android:textSize="12dp"
-                        android:layout_marginTop="2dp"
-                        android:textColor="#7C7B7B" />
+                        android:layout_alignParentRight="true"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginVertical="25dp"
+                        android:layout_marginRight="26dp"
+                        android:src="@drawable/check_dark" />
 
-                    <TextView
-                        android:id="@+id/tvHeaderUserPhoto"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                      android:layout_marginTop="9dp"
-                        android:text="Required*"
-                        android:textColor="@color/red"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-
-                <ImageView
-                    android:id="@+id/imgCheckUserPhoto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginHorizontal="15dp"
-                    android:layout_marginVertical="25dp"
-                    android:layout_marginRight="26dp"
-                    android:src="@drawable/check_dark" />
-
-            </RelativeLayout>
+                </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView

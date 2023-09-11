@@ -1,6 +1,7 @@
 package com.socialmarkaz.app.Models
 
 import android.app.Application
+import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.QuerySnapshot
@@ -19,30 +20,30 @@ class ProductViewModel(context: Application) : AndroidViewModel(context) {
     private var constants = Constants()
 
 
-    fun getRecProductAdapter(): ProductAdapter {
+    fun getRecProductAdapter(listener:Context,itemClickListener: ProductAdapter.OnItemClickListener): ProductAdapter {
         return ProductAdapter(
             sharedPrefManager.getRecProductList()
-                .filter { it.type.equals(constants.PRODUCT_TYPE_REC) })
+                .filter { it.type.equals(constants.PRODUCT_TYPE_REC) },listener,itemClickListener)
     }
 
-    fun getFollProductAdapter(): ProductAdapter {
+    fun getFollProductAdapter(listener:Context,itemClickListener: ProductAdapter.OnItemClickListener): ProductAdapter {
         return ProductAdapter(
             sharedPrefManager.getFollProductList()
-                .filter { it.type.equals(constants.PRODUCT_TYPE_FOLL) })
+                .filter { it.type.equals(constants.PRODUCT_TYPE_FOLL) },listener,itemClickListener)
     }
 
-    fun getPurchProductAdapter(): ProductAdapter {
+    fun getPurchProductAdapter(listener:Context,itemClickListener: ProductAdapter.OnItemClickListener): ProductAdapter {
 
         return ProductAdapter(
             sharedPrefManager.getPurchProductList()
-                .filter { it.type.equals(constants.PRODUCT_TYPE_PURCH) })
+                .filter { it.type.equals(constants.PRODUCT_TYPE_PURCH) },listener,itemClickListener)
     }
 
-    fun getCartProductAdapter(): ProductAdapter {
+    fun getCartProductAdapter(listener:Context,itemClickListener: ProductAdapter.OnItemClickListener): ProductAdapter {
 
         return ProductAdapter(
             sharedPrefManager.getCartProductList()
-                .filter { it.type.equals(constants.PRODUCT_TYPE_CART) })
+                .filter { it.type.equals(constants.PRODUCT_TYPE_CART) },listener,itemClickListener)
     }
 
     suspend fun getProducts(): Task<QuerySnapshot> {

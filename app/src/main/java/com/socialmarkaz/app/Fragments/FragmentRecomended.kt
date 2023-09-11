@@ -13,16 +13,18 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.enfotrix.lifechanger.Utils
+import com.socialmarkaz.app.Adapters.ProductAdapter
 import com.socialmarkaz.app.Constants
 import com.socialmarkaz.app.Models.Product
 import com.socialmarkaz.app.Models.ProductViewModel
 import com.socialmarkaz.app.R
 import com.socialmarkaz.app.SharedPrefManager
+import com.socialmarkaz.app.Ui.ActivityProductDetails
 import com.socialmarkaz.app.databinding.FragmentInvestBinding
 import com.socialmarkaz.app.databinding.FragmentRecomendedBinding
 import kotlinx.coroutines.launch
 
-class FragmentRecomended : Fragment() {
+class FragmentRecomended : Fragment() , ProductAdapter.OnItemClickListener{
 
     private lateinit var utils: Utils
     private lateinit var constants: Constants
@@ -52,10 +54,19 @@ class FragmentRecomended : Fragment() {
         val root: View = binding.root
 
 
-        binding.rvRecProduct.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.rvRecProduct.adapter = productViewModel.getRecProductAdapter()
+        binding.rvRecProduct.layoutManager = GridLayoutManager(requireContext(),2)
+        binding.rvRecProduct.adapter = productViewModel.getRecProductAdapter(requireContext(),this)
 
         return root
+    }
+
+    override fun onItemClick(product: Product) {
+     startActivity(Intent(requireContext(),ActivityProductDetails::class.java).putExtra("product", product))
+    }
+
+    override fun onDeleteClick(product: Product) {
+        Toast.makeText(requireContext(), "clicked", Toast.LENGTH_SHORT).show()
+
     }
 
 

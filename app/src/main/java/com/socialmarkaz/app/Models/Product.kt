@@ -1,5 +1,6 @@
 package com.socialmarkaz.app.Models
 
+import java.io.Serializable
 
 
 data class Product @JvmOverloads constructor(
@@ -8,6 +9,9 @@ data class Product @JvmOverloads constructor(
     var selerName: String = "",
     var productPhoto: String = "",
     var discount: String = "",
-    var type:String=""
+    var type:String="",
+    var catagory:String="",
+    var deliverType:String="",
+    var quantity:String=""
 
-)
+): Serializable

@@ -2,16 +2,19 @@ package com.socialmarkaz.app.Ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.socialmarkaz.app.Models.SearchHistoryDialogFragment
 import com.socialmarkaz.app.R
 import com.socialmarkaz.app.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , SearchHistoryDialogFragment.SearchHistoryDialogListener
+    {
 
     private lateinit var binding:ActivityMainBinding
 
@@ -32,4 +35,8 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
-}
+
+        override fun onSearchHistoryItemClick(query: String) {
+            Toast.makeText(this, ""+query, Toast.LENGTH_SHORT).show()
+        }
+    }

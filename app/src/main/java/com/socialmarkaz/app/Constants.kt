@@ -6,15 +6,8 @@ public class Constants  {
 
     ///////////////////////////// COLLECTIONS NAME //////////////////////////
     public var USER_COLLECTION="User"
-
-    public var STORE_COLLECTION="Store Owner"
-    public var NOMINEE_COLLECTION="Nominees"
     public var ACCOUNTS_COLLECTION="User-Accounts"
     public var PRODUCT_COLLECTION="Products"
-    public var ANNOUNCEMENT_COLLECTION="Admin Announcement"
-    public var TRANSACTION_REQ_COLLECTION="Transactions"
-    public var PROFIT_TAX_COLLECTION="ProfitTax"
-    public var WITHDRAW_COLLECTION="Withdraw"
     public var NOTIFICATION_COLLECTION="Notification"
 
 
