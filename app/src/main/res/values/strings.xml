@@ -19,7 +19,6 @@
     <string name="upload"><b><u>Select</u></b></string>
 
 
-
     <string-array name="listofproductstype">
         <item>RecProduct</item>
         <item>FollProduct</item>

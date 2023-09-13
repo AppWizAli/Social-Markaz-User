@@ -6,12 +6,15 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icnn"
         android:label="Social Markaz"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/icn"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialMarkaz"
         tools:targetApi="31">
+        <activity
+            android:name=".Ui.ActivityProductPurchased"
+            android:exported="false" />
         <activity
             android:name=".Ui.ActivityWebView"
             android:exported="false" />
@@ -41,7 +44,7 @@
             android:exported="false" />
         <activity
             android:name=".Ui.ActivitySplash"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -58,8 +61,7 @@
             android:theme="@style/Theme.SocialMarkaz" />
         <activity
             android:name=".Ui.ActivitySetting"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".Ui.ActivityCoins"
             android:exported="false" />

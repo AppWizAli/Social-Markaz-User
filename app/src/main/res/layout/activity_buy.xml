@@ -56,7 +56,7 @@
             android:layout_marginRight="13dp"
             android:src="@drawable/chip_" />
         <TextView
-            android:id="@+id/tvUserName"
+            android:id="@+id/tvAccountNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"

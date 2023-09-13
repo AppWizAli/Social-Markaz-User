@@ -7,7 +7,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.socialmarkaz.app.Models.ModelPaymentDetails
 import com.socialmarkaz.app.Models.Product
+import com.socialmarkaz.app.Models.Seller
 /*import com.enfotrix.lifechanger.Models.InvestmentModel
 import com.enfotrix.lifechanger.Models.ModelAnnouncement
 import com.enfotrix.lifechanger.Models.ModelBankAccount
@@ -554,5 +556,23 @@ fun PutUserLocation(IsLocationAdded:Boolean)
     fun putFollProductList(list: List<Product>) {
         editor.putString("FollProduct", Gson().toJson(list))
         editor.commit()
+    }
+    fun putSeller(list:List<Seller>)
+    {
+        editor.putString("seller",Gson().toJson(list))
+        editor.commit()
+    }
+    fun getseller():List<Seller>
+    {
+
+        val json = sharedPref.getString("seller", "") ?: ""
+        val type: Type = object : TypeToken<List<Seller?>?>() {}.getType()
+        //return Gson().fromJson(json, type)
+
+        return if (!json.isNullOrEmpty()) {
+            Gson().fromJson(json, type) ?: emptyList()
+        } else {
+            emptyList()
+        }
     }
 }

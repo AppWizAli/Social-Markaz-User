@@ -3,6 +3,7 @@ package com.socialmarkaz.app.Models
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
@@ -36,19 +37,24 @@ class ProductViewModel(context: Application) : AndroidViewModel(context) {
 
         return ProductAdapter(
             sharedPrefManager.getPurchProductList()
-                .filter { it.type.equals(constants.PRODUCT_TYPE_PURCH) },listener,itemClickListener)
+                .filter { it.cartType.equals(constants.PRODUCT_TYPE_PURCH) },listener,itemClickListener)
     }
 
     fun getCartProductAdapter(listener:Context,itemClickListener: ProductAdapter.OnItemClickListener): ProductAdapter {
-
         return ProductAdapter(
             sharedPrefManager.getCartProductList()
-                .filter { it.type.equals(constants.PRODUCT_TYPE_CART) },listener,itemClickListener)
+                .filter { it.cartType.equals(constants.PRODUCT_TYPE_CART) },listener,itemClickListener)
     }
 
     suspend fun getProducts(): Task<QuerySnapshot> {
         return userRepo.getproducts()
     }
-
-
+suspend fun getSeller():Task<QuerySnapshot>
+{
+    return userRepo.getSeller()
+}
+    suspend fun updateProduct(product:Product):LiveData<Boolean>
+    {
+        return userRepo.updateProduct(product)
+    }
 }

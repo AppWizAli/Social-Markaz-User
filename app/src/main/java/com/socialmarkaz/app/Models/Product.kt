@@ -12,6 +12,10 @@ data class Product @JvmOverloads constructor(
     var type:String="",
     var catagory:String="",
     var deliverType:String="",
-    var quantity:String=""
+    var quantity:String="",
+    var storename:String="",
+    var storeId:String="",
+    var cartType:String="",
+    var docId:String=""
 
 ): Serializable

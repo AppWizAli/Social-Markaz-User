@@ -12,8 +12,10 @@ import androidx.lifecycle.lifecycleScope
 import com.enfotrix.lifechanger.Utils
 import com.socialmarkaz.app.Adapters.HomePagerAdapter
 import com.socialmarkaz.app.Constants
+import com.socialmarkaz.app.Models.ModelPaymentDetails
 import com.socialmarkaz.app.Models.Product
 import com.socialmarkaz.app.Models.ProductViewModel
+import com.socialmarkaz.app.Models.Seller
 import com.socialmarkaz.app.R
 import com.socialmarkaz.app.SharedPrefManager
 import com.socialmarkaz.app.databinding.FragmentHomeBinding
@@ -25,7 +27,6 @@ class FragmentHome : Fragment() {
 
 
     private val productViewModel: ProductViewModel by viewModels()
-
 
 
     private lateinit var utils: Utils
@@ -49,10 +50,10 @@ class FragmentHome : Fragment() {
         sharedPrefManager = SharedPrefManager(requireContext())
 
 
-getData()
+        getData()
 
 
-        binding.viewPager.adapter=HomePagerAdapter(childFragmentManager)
+        binding.viewPager.adapter = HomePagerAdapter(childFragmentManager)
         binding.tabLayout.setupWithViewPager(binding.viewPager)
 
         /*
@@ -76,9 +77,6 @@ getData()
     }
 
 
-
-
-
     fun getData() {
         utils.startLoadingAnimation()
         lifecycleScope.launch {
@@ -92,15 +90,54 @@ getData()
                         val PurchProductlist = ArrayList<Product>()
                         if (task.result.size() > 0) {
                             for (document in task.result) {
-                                if(document.toObject(Product::class.java).type==constants.PRODUCT_TYPE_REC) RecProductlist.add(document.toObject(Product::class.java))
-                                else   if(document.toObject(Product::class.java).type==constants.PRODUCT_TYPE_CART)CartProductlist.add(document.toObject(Product::class.java))
-                                else   if(document.toObject(Product::class.java).type==constants.PRODUCT_TYPE_FOLL)FollProductlist.add(document.toObject(Product::class.java))
-                                else   if(document.toObject(Product::class.java).type==constants.PRODUCT_TYPE_PURCH)PurchProductlist.add(document.toObject(Product::class.java))
+                                if (document.toObject(Product::class.java).type == constants.PRODUCT_TYPE_REC) RecProductlist.add(
+                                    document.toObject(Product::class.java)
+                                )
+                                if (document.toObject(Product::class.java).cartType == constants.PRODUCT_TYPE_CART) {
+                                    CartProductlist.add(
+                                        document.toObject(Product::class.java)
+                                    )
+                                }
+
+
+                                 if (document.toObject(Product::class.java).type == constants.PRODUCT_TYPE_FOLL) FollProductlist.add(
+                                    document.toObject(Product::class.java)
+                                )
+                                 if (document.toObject(Product::class.java).cartType == constants.PRODUCT_TYPE_PURCH) PurchProductlist.add(
+                                    document.toObject(Product::class.java)
+                                )
                             }
                             sharedPrefManager.putRecProductList(RecProductlist)
                             sharedPrefManager.putFollProductList(FollProductlist)
                             sharedPrefManager.putCartProductList(CartProductlist)
                             sharedPrefManager.putPurchProductList(PurchProductlist)
+                        }
+
+
+
+
+                    } else Toast.makeText(
+                        requireContext(),
+                        "SOMETHING_WENT_WRONG_MESSAGE",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                .addOnFailureListener {
+                    utils.endLoadingAnimation()
+
+
+                }
+        }
+        lifecycleScope.launch {
+            productViewModel.getSeller()
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        var seller = ArrayList<Seller>()
+                        if (task.result.size() > 0) {
+                            for (document in task.result)
+                                seller.add(document.toObject(Seller::class.java))
+                            sharedPrefManager.putSeller(seller)
+
                         }
                     } else Toast.makeText(
                         requireContext(),
@@ -115,11 +152,5 @@ getData()
                 }
         }
 
-
     }
-
-
-
-
-
 }

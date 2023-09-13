@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/img"
+            android:src="@drawable/icn"
             app:cornerRadius="@dimen/corner_radius"/>
 
 
@@ -27,14 +27,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="7dp"
-            android:text="Go Pakistani's Online"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="7dp"
+            android:gravity="center_horizontal"
+            android:text="Go Pakistani's Online"
             android:textColor="#CFCECE"
-            android:textStyle="bold"
             android:textSize="18dp"
-            />
+            android:textStyle="bold" />
 
     </LinearLayout>
 

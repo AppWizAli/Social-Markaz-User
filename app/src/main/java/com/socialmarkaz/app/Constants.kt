@@ -8,7 +8,7 @@ public class Constants  {
     public var USER_COLLECTION="User"
     public var ACCOUNTS_COLLECTION="User-Accounts"
     public var PRODUCT_COLLECTION="Products"
-    public var NOTIFICATION_COLLECTION="Notification"
+    public var SELLER_COLLECTION="Seller"
 
 
 

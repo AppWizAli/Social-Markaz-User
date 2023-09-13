@@ -133,7 +133,6 @@ class ActivityUserDetails : AppCompatActivity() {
 
         }
         binding.btnStart.setOnClickListener {
-
             startApp()
 
         }
@@ -231,6 +230,7 @@ class ActivityUserDetails : AppCompatActivity() {
                 .observe(this@ActivityUserDetails) {
                     utils.endLoadingAnimation()
                     if (it == true) {
+                        sharedPrefManager.setAccountNumber(accountNumber)
                         sharedPrefManager.putUserAccount(true)
                         Toast.makeText(
                             mContext,

@@ -44,14 +44,14 @@ class FragmentRecomended : Fragment() , ProductAdapter.OnItemClickListener{
 
 
 
-        constants = Constants()
-        mContext = requireContext()
-        utils = Utils(requireContext())
-        sharedPrefManager = SharedPrefManager(requireContext())
 
 
         _binding = FragmentRecomendedBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        constants = Constants()
+        mContext = requireContext()
+        utils = Utils(requireContext())
+        sharedPrefManager = SharedPrefManager(requireContext())
 
 
         binding.rvRecProduct.layoutManager = GridLayoutManager(requireContext(),2)
@@ -61,8 +61,9 @@ class FragmentRecomended : Fragment() , ProductAdapter.OnItemClickListener{
     }
 
     override fun onItemClick(product: Product) {
+
      startActivity(Intent(requireContext(),ActivityProductDetails::class.java).putExtra("product", product))
-    }
+ }
 
     override fun onDeleteClick(product: Product) {
         Toast.makeText(requireContext(), "clicked", Toast.LENGTH_SHORT).show()

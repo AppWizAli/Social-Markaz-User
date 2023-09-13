@@ -16,6 +16,7 @@ import com.google.firebase.storage.UploadTask
 import com.google.firebase.storage.ktx.storage
 import com.socialmarkaz.app.Constants
 import com.socialmarkaz.app.Models.ModelPaymentDetails
+import com.socialmarkaz.app.Models.Product
 import com.socialmarkaz.app.SharedPrefManager
 class Repo(val context: Context) {
 
@@ -37,7 +38,7 @@ class Repo(val context: Context) {
 
     private val AccountsCollection = db.collection(constants.ACCOUNTS_COLLECTION)
     private val productCollection = db.collection(constants.PRODUCT_COLLECTION)
-    private val NotificationCollection = db.collection(constants.NOTIFICATION_COLLECTION)
+    private val SellerCollection = db.collection(constants.SELLER_COLLECTION)
     private val UserCollection = db.collection(constants.USER_COLLECTION)
 
 
@@ -72,6 +73,20 @@ class Repo(val context: Context) {
         }.addOnFailureListener {
             result.value = false
         }
+        return result
+    }
+
+    suspend fun updateProduct(product:Product):LiveData<Boolean>
+    {
+        val result=MutableLiveData<Boolean>()
+        productCollection.document(product.docId).set(product)
+            .addOnSuccessListener {
+                result.value=true
+            }
+            .addOnFailureListener()
+            {
+                result.value=false
+            }
         return result
     }
 /*    suspend fun updateUser(user: User): LiveData<Boolean> {
@@ -109,5 +124,8 @@ class Repo(val context: Context) {
     suspend fun getproducts(): Task<QuerySnapshot> {
         return productCollection.get()
     }
-
+suspend fun getSeller():Task<QuerySnapshot>
+{
+    return  SellerCollection.get()
+}
 }
